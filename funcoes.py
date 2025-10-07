@@ -5,10 +5,3 @@ def interagir_no_zoologico(animais):
         print(animal.descrever())
         print("Som:", animal.emitir_som())
 
-        if isinstance(animal, IVoador):
-            print(animal.voar())
-
-        if isinstance(animal, INadador):
-            print(animal.nadar())
-
-        print("-" * 40)
