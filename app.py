@@ -13,3 +13,15 @@ class Animal(ABC):
         return f"Nome: {self.nome}, Idade: {self.idade} anos"
 
 
+class IVoador(ABC):
+    @abstractmethod
+    def voar(self):
+        pass
+
+
+class INadador(ABC):
+    @abstractmethod
+    def nadar(self):
+        pass
+
+
