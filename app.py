@@ -25,3 +25,30 @@ class INadador(ABC):
         pass
 
 
+class Mamifero(Animal):
+    pass
+
+
+class Ave(Animal):
+    pass
+
+
+class Leao(Mamifero):
+    def emitir_som(self):
+        return "Rugido"
+
+
+class Pinguim(Ave, INadador):
+    def emitir_som(self):
+        return "Gack"
+
+    def nadar(self):
+        return "O pinguim está nadando"
+
+
+class Aguia(Ave, IVoador):
+    def emitir_som(self):
+        return "Piau!"
+
+    def voar(self):
+        return "A águia está voando"
