@@ -10,7 +10,7 @@ class Animal(ABC):
         pass
 
     def descrever(self):
-        return f"Nome: {self.__nome},\t Idade: {self.__idade} anos"
+        return f"Nome: {self.__nome}, Idade: {self.__idade} anos"
 
 
 class IVoador(ABC):
@@ -27,20 +27,32 @@ class INadador(ABC):
 
 class Mamifero(Animal):
     def __init__(self, nome, idade):
-        super().__init(nome, idade)
+        super().__init__(nome, idade)
+
+    def emitir_som(self):
+        return "####"
 
 
 class Ave(Animal):
     def __init__(self, nome, idade):
-        super().__init(nome, idade)
+        super().__init__(nome, idade)
+
+    def emitir_som(self):
+        return "****"
 
 
 class Leao(Mamifero):
+    def __init__(self, nome, idade):
+        super().__init__(nome, idade)
+
     def emitir_som(self):
         return "Rugido"
 
 
 class Pinguim(Ave, INadador):
+    def __init__(self, nome, idade):
+        super().__init__(nome, idade)
+
     def emitir_som(self):
         return "Gack"
 
@@ -49,6 +61,9 @@ class Pinguim(Ave, INadador):
 
 
 class Aguia(Ave, IVoador):
+    def __init__(self, nome, idade):
+        super().__init__(nome, idade)
+
     def emitir_som(self):
         return "Pia"
 
