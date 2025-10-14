@@ -2,15 +2,15 @@ from abc import ABC, abstractmethod
 
 class Animal(ABC):
     def __init__(self, nome: str, idade: int):
-        self.nome = nome
-        self.idade = idade
+        self.__nome = nome
+        self.__idade = idade
 
     @abstractmethod
     def emitir_som(self):
         pass
 
     def descrever(self):
-        return f"Nome: {self.nome}, Idade: {self.idade} anos"
+        return f"Nome: {self.__nome},\t Idade: {self.__idade} anos"
 
 
 class IVoador(ABC):
@@ -26,11 +26,13 @@ class INadador(ABC):
 
 
 class Mamifero(Animal):
-    pass
+    def __init__(self, nome, idade):
+        super().__init(nome, idade)
 
 
 class Ave(Animal):
-    pass
+    def __init__(self, nome, idade):
+        super().__init(nome, idade)
 
 
 class Leao(Mamifero):
@@ -48,7 +50,7 @@ class Pinguim(Ave, INadador):
 
 class Aguia(Ave, IVoador):
     def emitir_som(self):
-        return "Piau!"
+        return "Pia"
 
     def voar(self):
         return "A águia está voando"
